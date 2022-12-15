@@ -1,13 +1,11 @@
 import { Card,Row,Col, Tabs, Tab, Image, OverlayTrigger , Tooltip} from 'react-bootstrap';
 import { GoLocation } from 'react-icons/go';
 
-// import { BsHeart, BsHeartFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 
 function ProductCard({ params }) {
     const discount_percent = ((params.originalPrice - params.price)/params.originalPrice) * 100 ;
-   // discount_percent = discount_percent.toFixed();
     return (
         <Card className='card-design'>
             <Link to={`/categories/${params.category}/${params._id}/details`}>
@@ -33,7 +31,6 @@ function ProductCard({ params }) {
 
                 </Card.Title>
                 <Card.Body>
-                    {/* <Row> */}
                     <Row>
                         {console.log(params)}
                         <Col md={12}>

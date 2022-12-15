@@ -30,8 +30,6 @@ function DisabledCard({ params, history }) {
                     <Card.Title>{params.title}</Card.Title>
                     <Card.Text>Posted Price: {params.price}$</Card.Text>
                     { params.saleFlag ? <Card.Text >Sold Price : {params.salePrice}$</Card.Text> : <Card.Text >Not yet Sold <span id="enableIcon" onClick={handleShow} style={{marginLeft : "45px", color:"green"}}>Make Active <RiDeviceRecoverFill /> </span></Card.Text>  }
-
-                    {/* { params.saleF40pxlag ? null :<span id="enableIcon" onClick={handleShow}><RiDeviceRecoverFill /></span> }   */}
                 </Card.Body>
                 <Card.Footer>
                     <small className="text-muted">

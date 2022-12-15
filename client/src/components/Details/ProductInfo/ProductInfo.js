@@ -82,9 +82,6 @@ function ProductInfo({ params }) {
                             </div>
                         </>
                         }
-                        {/* <div className='discount-box1'>
-                            {(discount_percent).toFixed(2)} {"% off"}
-                        </div> */}
                     </Col>
                     <Col md={5} className='price-point1'>
                         {params.flexibility==="Fixed"?
@@ -139,12 +136,6 @@ function ProductInfo({ params }) {
                         <hr />
                         <p id="details-footer" className="text-muted">Product listedhvh at {params.addedAt}</p>
                     </Tab>
-                    {/* <Tab eventKey="aboutSeller" title="About seller">
-                        <p>Name: {params.name || "Not specified"}</p>
-                        <p>Email: {params.email}</p>
-                        <p>Telephone: {params.phone}</p>
-                        <p>City: {params.city}</p>
-                    </Tab> */}
                 </Tabs>
             </div>
         </>

@@ -18,10 +18,6 @@ function Profile({ match, history }) {
     const [messages, setMessages] = useState(false);
     const [user, setUser] = useState([]);
 
-    // const [showMsg, setShowMdg] = useState(false);
-    // const handleClose = () => setShowMdg(false);
-    // const handleShow = () => setShowMdg(true);
-
     const handleActive = () => {
         setActive(true)
         setArchived(false);

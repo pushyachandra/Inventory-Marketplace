@@ -70,9 +70,6 @@ function Aside({ params, history }) {
                history.push(`/profile/${params.seller}`);
             } else {
                 console.log("entered else lloop");
-                // setLoading(false);
-                // setError(res.error);
-                // setAlertShow(true);
             }
         })
         .catch(err => console.error('edit product err: ', err))
@@ -210,18 +207,6 @@ function Aside({ params, history }) {
                     <Modal.Title>Donate for the cause</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>  
-                    {/* <Form.Label>Sale Price</Form.Label>
-                            <Form.Control type="text" placeholder="Enter Sale Price" name="salePrice" required  onChange={handleSalesPrice} /> */}
-                            {/* <Form ref={form} onSubmit={sendEmail}>
-                                <Form.Label>Name</Form.Label>
-                                <Form.Control type="text" name="name" />
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control type="email" name="email" />
-                                <Form.Label>Subject</Form.Label>
-                                <Form.Control type="text" name="subject" />
-                                <Form.Label>Message</Form.Label>
-                                <Form.Control as="textarea" name="message" />
-                            </Form> */}
                             <div class="alert alert-success">
     <strong>Congratulations on your charity!</strong> <br></br><i>You are contributing to the environment by saving <strong>{params.title}</strong> from going to waste /Landfill.</i> 
   </div>
@@ -230,7 +215,6 @@ function Aside({ params, history }) {
                                 <Form.Control type="text" name="donationName" value={params.title}/>
                                
                                 <Form.Label>Email</Form.Label>
-                                {/* <Form.Control type="email" name="email" /> */}
                                 <Form.Control as="select" type="email"  name="email"  required >
                                     <option>Choose...</option>
                                     <option>SJSUfoodpantry@gmail.com</option>
@@ -248,9 +232,7 @@ function Aside({ params, history }) {
                                 <Form.Label>Contact Number</Form.Label>
                                 <Form.Control type="text" name="contactNum" value= {params.phoneNumber} />
                                 <Form.Label>Message</Form.Label>
-                                {/* <textarea name="message" /> */}
                                 <Form.Control as="textarea" name="message" />
-                                {/* <Form.Control type="submit" value="Send" /> */}
                             </Form>
                 </Modal.Body>
                 <Modal.Footer>
