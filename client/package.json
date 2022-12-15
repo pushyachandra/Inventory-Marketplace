@@ -3,13 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "@emailjs/browser": "^3.10.0",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
+    "bootstrap": "^4.6.0",
+    "emailjs": "^4.0.1",
+    "moment": "^2.29.1",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.5.2",
+    "react-cookie": "^4.0.3",
+    "react-dom": "^17.0.1",
+    "react-icons": "^4.2.0",
+    "react-infinite-scroll-component": "^6.0.0",
+    "react-moment": "^1.1.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^5.0.1",
+    "socket.io-client": "^4.0.1",
+    "web-vitals": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,5 +45,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:4000"
 }
