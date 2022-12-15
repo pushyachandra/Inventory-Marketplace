@@ -1,18 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { ContextStore } from './ContextStore';
+
 import './index.css';
 import App from './App';
-import ContextS from './ContextS';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <ContextS>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ContextS>
+ReactDOM.render(
+   // <React.StrictMode>
+      <ContextStore>
+         <BrowserRouter>
+            <App />
+         </BrowserRouter>
+      </ContextStore>,
+   // </React.StrictMode>,
+   document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
