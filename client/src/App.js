@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 import Categories from './Pages/Categories';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
@@ -34,7 +33,6 @@ function App() {
             <Route path='/messages/:id' exact component={Messages} />;
             <Route path="/*" component={Error404} />
          </Switch>
-         {/* <Footer /> */}
       </>
    );
 }

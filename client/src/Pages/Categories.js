@@ -31,22 +31,6 @@ function Categories({ match }) {
             .catch(err => console.log(err));
     }, [currentCategory, setProduct])
 
-    // useEffect(() => {
-    //     setPage(1);
-    //     setLoading(true);
-    //     getAll(1, currentCategory, query)
-    //         .then(res => {
-    //             if (query === "") {
-    //                 setProduct(products => [...products, ...res.products]);
-    //             } else {
-    //                 setProduct(res.products)
-    //             }
-    //             setLoading(false);
-    //             setPage(page => page + 1);
-    //         })
-    //         .catch(err => console.log(err));
-    // }, [query, currentCategory])
-
     const searchFunc=(e) => {
         setLoading(true);
        
@@ -55,7 +39,6 @@ function Categories({ match }) {
             setProduct(res.products);
             setLoading(false);
             setPage(page => page + 1);
-            //setQuery("");
         })
         .catch(err => console.log(err));
     }

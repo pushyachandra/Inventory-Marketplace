@@ -2,12 +2,10 @@ const { Router } = require('express');
 const router = Router();
 const { cloudinary } = require('../config/cloudinary');
 const User = require('../models/User');
-// const isAuth = require('../middlewares/isAuth')
 const productService = require('../services/productService');
 const userService = require('../services/userService');
 
 router.patch('/edit-profile/:id', async (req, res) => {
-    //TODO: Rewrite this 
     let { name, phoneNumber, email } = req.body;
     try {
         let errors = [];

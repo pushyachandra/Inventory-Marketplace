@@ -103,10 +103,6 @@ function EditProfile({ history }) {
                                 <p><BsFillPersonFill /> <input type="text" name="name" value={user.name} onChange={handleChanges} required /></p>
                                 <p><MdEmail /> <input type="email" name="email" value={user.email} onChange={handleChanges} required /></p>
                                 <p><MdPhoneAndroid /> <input type="text" name="phoneNumber" value={user.phoneNumber} onChange={handleChanges} required /></p>
-                                {/* TODO user password changes:
-                                <p><RiLockPasswordFill /> <input type="password" name="oldPassword" placeholder="Old password" onChange={handleChanges} required /></p>
-                                <p><RiLockPasswordFill /> <input type="password" name="newPassword" placeholder="New password" onChange={handleChanges} required /></p>
-                                <p><RiLockPasswordFill /> <input type="password" name="repNewPassword" placeholder="Repeat new password" onChange={handleChanges} required /></p> */}
                             </Col>
                             <Col lg={2} id="edit-profile-icons">
                                 {loading ? (

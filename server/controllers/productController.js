@@ -20,7 +20,6 @@ router.get('/', async (req, res) => {
             products = products.filter(x => x.title.toLowerCase().includes(search.toLowerCase()) || x.city.toLowerCase().includes(search.toLowerCase()))
             res.status(200).json({ products: products });
         } else {
-            // products = await Product.paginate({}, { page: parseInt(page) || 1, limit: 10 });
             products = await Product.find();
             products = products.filter(x => x.active == true)
             res.status(200).json({ products: products });
@@ -31,7 +30,6 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/:category', async (req, res) => {
-    // console.log("entered food category" + req.params.category);
     const { page } = req.query;
     try {
         let products = await Product.paginate({ category: req.params.category, active:true },{ page: parseInt(page) || 1, limit: 10 });
@@ -80,12 +78,10 @@ router.post('/create', async (req, res) => {
         if (isNaN(Number(zipcode))) errors.push('Zipcode should be a number; ');
 
         if (description.length < 10 || description.length > 1000) errors.push('Description should be at least 10 characters long and max 1000 characters long; ');
-        // if (/^[A-Za-z]+$/.test(city) == false) errors.push('City should contains only english letters; ')
         if (!image.includes('image')) errors.push('The uploaded file should be an image; ');
         if (!category) errors.push('Category is required; ');
 
         if (errors.length >= 1) throw { message: [errors] };
-        // console.log("quantity ::::::: " + quantity);
         let compressedImg = await productService.uploadImage(image);
         let user = await productService.findUserById(req.user._id);
         let product = new Product({
@@ -100,8 +96,6 @@ router.post('/create', async (req, res) => {
 
             
         })
-       // console.log("product ::::::::" + product);
-        //console.log("req ::::;" + req.user.name)
         console.log(JSON.stringify(user));
         await product.save()
         await productService.userCollectionUpdate(req.user._id, product);
@@ -114,7 +108,6 @@ router.post('/create', async (req, res) => {
 });
 
 router.patch('/edit/:id', isAuth, async (req, res) => {
-    //TODO: Rewrite this 
     let { title, quantity,price, originalPrice,description, city, category, image } = req.body;
     try {
         let user = await productService.findUserById(req.user._id);
@@ -128,7 +121,6 @@ router.patch('/edit/:id', isAuth, async (req, res) => {
         if (isNaN(Number(price))) errors.push('Price should be a number; ');
         if (isNaN(Number(quantity))) errors.push('Quantity should be a number; ');
         if (description.length < 10 || description.length > 1000) errors.push('Description should be at least 10 characters long and max 1000 characters long; ');
-        // if (/^[A-Za-z]+$/.test(city) == false) errors.push('City should contains only english letters; ')
         if (req.body.image) {
             if (!req.body.image.includes('image')) errors.push('The uploaded file should be an image; ');
         }
@@ -236,12 +228,6 @@ router.get('/wishlist/:id', async (req, res) => {
 
         if (salePrice.length < 0 ) errors.push('salePrice should greater than zero; ');
         if (isNaN(Number(salePrice))) errors.push('salePrice should be a number; ');
-        
-        // if (req.body.image) {
-        //     if (!req.body.image.includes('image')) errors.push('The uploaded file should be an image; ');
-        // }
-        //if (!category || category == "Choose...") errors.push('Category is required; ');
-
         if (errors.length >= 1) throw { message: [errors] };
         if(salePrice >0 ){
             saleFlag = true;

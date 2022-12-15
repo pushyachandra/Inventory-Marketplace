@@ -1,14 +1,14 @@
 import { useContext } from 'react';
-import { ContextS } from '../../ContextS';
-import { Navbar, Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Context } from '../../ContextStore';
+import { Navbar, NavDropdown, Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { BsFillEnvelopeFill, BsFillPlusCircleFill } from 'react-icons/bs';
+import { BsFillPersonFill, BsFillEnvelopeFill, BsFillPlusCircleFill } from 'react-icons/bs';
 import { IoLogOut } from 'react-icons/io5'
 import LOGO from './MPLOGO.png'
-import './Header.css'
 
+import './Header.css'
 function Header() {
-    const { userData, setUserData } = useContext(ContextS)
+    const { userData, setUserData } = useContext(Context)
 
     return (
         <Navbar collapseOnSelect bg="light" variant="light">
