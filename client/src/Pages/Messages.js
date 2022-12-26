@@ -83,6 +83,7 @@ function Messages({ match }) {
                         <h5>No messages yet</h5>
                     }
                 </aside>
+                {selected!==undefined?(
                 <article className="col-lg-8 col-md-8">
                     {isSelected &&
                         <>
@@ -140,6 +141,7 @@ function Messages({ match }) {
                         </>
                     }
                 </article>
+                ):null}
             </Row>
         </Container>
     )
